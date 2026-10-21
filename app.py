@@ -1,9 +1,10 @@
+from flask import Flask, render_template
 
+app = Flask(__name__)
 
-def print_hi(message):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {message}')  # Press Ctrl+F8 to toggle the breakpoint.
-
+@app.route('/')
+def dashboard():
+    return render_template('dashboard.html')
 
 if __name__ == '__main__':
-    print_hi('Ready for updates!!')
+    app.run(debug=True)
